@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long a, b, nrcifa = 0, nrcifb = 0, k = 0, uca, ucb;
+    
+    cin >> a >> b;
+    
+    int copiea = a;
+    int copieb = b;
+    
+    while(copiea > 0)
+    {
+        nrcifa ++;
+        copiea = copiea / 10;
+    }
+    
+    while(copieb > 0)
+    {
+        nrcifb ++;
+        copieb = copieb / 10;
+    }
+    
+    if(nrcifa != nrcifb)
+    {
+        cout << "NU" << '\n';
+    }
+    else
+    {
+        cout << "DA" << '\n';
+        
+        while(a > 0 and b > 0)
+        {
+            uca = a % 10;
+            ucb = b % 10;
+            
+            if(uca == ucb)
+            {
+                k ++;
+            }
+            
+            a = a / 10;
+            b = b / 10;
+        }
+        
+        cout << k;
+    }
+    
+    
+    
+}
